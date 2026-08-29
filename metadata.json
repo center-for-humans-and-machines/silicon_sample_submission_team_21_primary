@@ -1,31 +1,39 @@
 {
-  "team_id": "example",
-  "team_name": "Example Team (replace me)",
-  "contact": "name@institution.edu",
+  "team_id": "team_21",
+  "team_name": "PhD students of CHM",
+  "contact": "ykeller@mpib-berlin.mpg.de",
   "creators": [
     {
-      "name": "Lastname, Firstname",
-      "affiliation": "Your institution",
-      "orcid": ""
+      "name": "Keller, Yannik",
+      "affiliation": "Max Planck Institute for Human Development, Berlin",
+      "orcid": "0000-0002-2821-4313"
+    },
+    {
+      "name": "Rilla, Raluca",
+      "affiliation": "Max Planck Institute for Human Development, Berlin",
+      "orcid": "0009-0007-7588-2262"
     }
   ],
-  "abstract": "",
+  "abstract": "Eighteen thousand synthetic survey respondents, each walked through the study's own questionnaire item by item by open-weight base language models. A synthetic respondent's answer is overwhelmingly set by where the response distribution sits rather than by which message they read — the intervention effect is about 0.03% of a response's variance — and the benchmark scores those two things separately, so no single model is good at all of them. Each answer is therefore assembled from four models, each supplying the one additive term it predicts best: which interventions move which outcomes, where the control-arm distribution sits, how demographic groups differ, and how spread out individual answers are. Eight of thirteen control-arm levels are set to independent published measurements of the same question rather than to a model's guess. Every free choice was fitted by nested leave-one-study-out cross-validation over four external megastudies and none on this study, which publishes no outcome data.\n\nThe pipeline that produces this entry -- the code, the prompts the simulated respondents see, the calibration, and the cross-validation that selected it -- was designed and written by an LLM coding agent (Claude Code, Claude Opus 5) rather than by people. The human team chose to use base rather than instruction-tuned models, chose which ones, chose the external studies used for validation and demographic anchoring, and required a nested cross-validation.\n\nConfiguration: combined [effects=qwen25_7b_demo+qwen25_7b+qwen25_7b_seed2+qwen25_7b_seed3+qwen25_72b_demo+qwen25_72b+qwen25_72b_seed2+muse_glimmer_30b+muse_glimmer_30b_seed2+muse_glimmer_30b_seed3, levels=v4_flash, offsets=v4_flash, residuals=v4_flash, shrink=0.400116, within=0.5, party-offsets=qwen25_72b_demo, residual-scale=1.12, anchored=8].",
   "license": "CC-BY-4.0",
   "tier": 1,
   "entry": "primary",
-  "approach_family": "per-respondent simulation, single model",
+  "approach_family": "per-respondent simulation, multi-model component hybrid, zero-shot; pipeline authored by an LLM coding agent (Claude Code / Claude Opus 5)",
   "models": [
-    "gpt-4o-mini-2024-07-18"
+    "Qwen/Qwen2.5-7B",
+    "Qwen/Qwen2.5-72B",
+    "meta-models/Muse-Glimmer-30B",
+    "deepseek-ai/DeepSeek-V4-Flash-Base"
   ],
-  "code_repository": "https://github.com/your-team/your-repo",
-  "code_doi": null,
+  "code_repository": "https://github.com/center-for-humans-and-machines/silicon_sampling",
+  "code_doi": "10.5281/zenodo.22160401",
   "disclosure_class": "A",
   "escrow_doi": null,
   "zenodo_doi": null,
   "prediction_files": [
     {
-      "file": "predictions/example_T1_primary_v1.csv",
-      "sha256": "0f24e117fcf6803743a12ab43f42bf8b0a7893fb9a706e5303cae3eadb79cc59"
+      "file": "predictions/mpib_T1_primary_v1.csv",
+      "sha256": "80a58dd60cb7824d7f9b0330259b9953348091c6d321a54427f868b74f7a2e01"
     }
   ],
   "coverage": {
